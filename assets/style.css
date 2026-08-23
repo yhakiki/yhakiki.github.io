@@ -1,0 +1,310 @@
+:root {
+  --ink: #1c1f26;
+  --ink-soft: #4a5060;
+  --muted: #6b7280;
+  --accent: #7a2e2e;
+  --accent-soft: #a34848;
+  --bg: #fbfaf8;
+  --bg-panel: #ffffff;
+  --border: #e6e2da;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --max-w: 860px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Header / nav ---- */
+header.site {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-inner .name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+nav.links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav.links a {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+nav.links a:hover,
+nav.links a.active {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ---- Hero ---- */
+.hero {
+  padding: 56px 0 40px;
+}
+
+.hero-grid {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg-panel);
+  box-shadow: 0 2px 14px rgba(28, 31, 38, 0.12);
+  flex-shrink: 0;
+  background: #eee3d8;
+}
+
+.hero-text h1 {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.hero-text .role {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.hero-text .institution {
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.contact-row a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.contact-row a:hover { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+/* ---- Sections ---- */
+section.block {
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+}
+
+section.block:first-of-type { border-top: none; }
+
+h2.section-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+
+h3.sub-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 26px 0 10px;
+}
+
+p { color: var(--ink-soft); }
+
+/* ---- News list ---- */
+ul.news {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.news li {
+  display: flex;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.97rem;
+}
+
+ul.news li:last-child { border-bottom: none; }
+
+ul.news .date {
+  flex-shrink: 0;
+  width: 92px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding-top: 1px;
+}
+
+/* ---- Buttons ---- */
+.btn-row { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid var(--accent);
+}
+
+.btn.primary { background: var(--accent); color: #fff; }
+.btn.primary:hover { background: var(--accent-soft); text-decoration: none; }
+
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn.ghost:hover { background: #f5ece9; text-decoration: none; }
+
+/* ---- Publication list ---- */
+ol.pub-list, ul.plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pub:last-child { border-bottom: none; }
+
+.pub .pub-title {
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.pub .pub-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+.pub .pub-links a {
+  font-size: 0.88rem;
+  margin-right: 14px;
+  font-weight: 600;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.tag.preprint { background: #f1e6d8; color: #8a5a1f; }
+.tag.published { background: #e4ede2; color: #3f6b3a; }
+.tag.accepted { background: #e3e8f3; color: #35508f; }
+
+/* ---- Entry (teaching / education / positions) ---- */
+.entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.entry:last-child { border-bottom: none; }
+
+.entry .entry-main .title { font-weight: 600; color: var(--ink); }
+.entry .entry-main .place { color: var(--ink-soft); font-size: 0.95rem; }
+.entry .entry-when {
+  color: var(--muted);
+  font-size: 0.88rem;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+/* ---- CV embed ---- */
+.cv-embed {
+  width: 100%;
+  height: 78vh;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 18px;
+  background: #fff;
+}
+
+.cv-note {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ---- Footer ---- */
+footer.site {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: 26px 0 50px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--accent); }
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .hero-grid { flex-direction: column; align-items: flex-start; text-align: left; }
+  .nav-inner { flex-direction: column; align-items: flex-start; }
+  nav.links { gap: 14px; }
+  .entry { flex-direction: column; gap: 2px; }
+}
