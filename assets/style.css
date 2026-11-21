@@ -308,3 +308,21 @@ footer.site a:hover { color: var(--accent); }
   nav.links { gap: 14px; }
   .entry { flex-direction: column; gap: 2px; }
 }
+
+/* Talk photo on the home page */
+.talk-photo { margin: 0; }
+.talk-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 14px rgba(28, 31, 38, 0.12);
+  background: #eee3d8;
+}
+.talk-photo figcaption {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  text-align: center;
+}
