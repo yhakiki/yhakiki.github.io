@@ -311,13 +311,15 @@ footer.site a:hover { color: var(--accent); }
 
 /* Talk photo on the home page: beside the name on wide screens, above it on phones,
    so it is visible on the first screen without scrolling */
-.hero-text { flex: 1 1 320px; min-width: 0; }
-.talk-photo { margin: 0; flex: 1 1 300px; max-width: 380px; }
-@media (max-width: 600px) {
+.hero-grid { flex-wrap: nowrap; gap: 32px; }
+.hero-text { flex: 0 0 auto; }
+.talk-photo { margin: 0; flex: 1 1 0; min-width: 0; }
+.contact-stack { flex-direction: column; align-items: flex-start; gap: 2px; }
+.contact-line { display: flex; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 680px) {
   .hero { padding-top: 28px; }
-  .hero-grid { gap: 24px; }
-  .hero-text { flex-basis: auto; }
-  .talk-photo { order: -1; max-width: 100%; width: 100%; flex-basis: auto; }
+  .hero-grid { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .talk-photo { order: -1; width: 100%; flex: none; }
 }
 .talk-photo img {
   display: block;
