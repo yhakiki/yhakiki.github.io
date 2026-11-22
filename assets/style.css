@@ -309,8 +309,16 @@ footer.site a:hover { color: var(--accent); }
   .entry { flex-direction: column; gap: 2px; }
 }
 
-/* Talk photo on the home page */
-.talk-photo { margin: 0; }
+/* Talk photo on the home page: beside the name on wide screens, above it on phones,
+   so it is visible on the first screen without scrolling */
+.hero-text { flex: 1 1 320px; min-width: 0; }
+.talk-photo { margin: 0; flex: 1 1 300px; max-width: 380px; }
+@media (max-width: 600px) {
+  .hero { padding-top: 28px; }
+  .hero-grid { gap: 24px; }
+  .hero-text { flex-basis: auto; }
+  .talk-photo { order: -1; max-width: 100%; width: 100%; flex-basis: auto; }
+}
 .talk-photo img {
   display: block;
   width: 100%;
