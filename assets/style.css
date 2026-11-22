@@ -311,7 +311,9 @@ footer.site a:hover { color: var(--accent); }
 
 /* Talk photo on the home page: beside the name on wide screens, above it on phones,
    so it is visible on the first screen without scrolling */
-.hero-grid { flex-wrap: nowrap; gap: 32px; }
+.wrap-hero { max-width: 1080px; }
+.hero { padding-bottom: 24px; }
+.hero-grid { flex-wrap: nowrap; gap: 40px; }
 .hero-text { flex: 0 0 auto; }
 .talk-photo { margin: 0; flex: 1 1 0; min-width: 0; }
 .contact-stack { flex-direction: column; align-items: flex-start; gap: 2px; }
